@@ -1,0 +1,3 @@
+interface Failure {
+  message: string
+}
