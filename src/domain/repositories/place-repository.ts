@@ -1,5 +1,5 @@
-import { ServerError } from "../../../core/errors";
-import { Either } from "../../../shared/either";
+import { ServerError } from "../../core/errors";
+import { Either } from "../../shared/either";
 import { PlaceEntity } from "../entities/place-entity";
 
 export interface IPlaceRepository {

@@ -1,6 +1,6 @@
-import { IPlaceDatasource } from "../domain/datasource/place-datasource";
-import { PlaceEntity } from "../domain/entities/place-entity";
-import { IPlaceRepository } from "../domain/repositories/place-repository";
+import { IPlaceDatasource } from "../../domain/datasource/place-datasource";
+import { PlaceEntity } from "../../domain/entities/place-entity";
+import { IPlaceRepository } from "../../domain/repositories/place-repository";
 import { Either, left, right } from "../../shared/either";
 import { ServerError } from "../../core/errors";
 

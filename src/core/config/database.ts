@@ -1,5 +1,5 @@
 import { DataSource } from "typeorm";
-import { PlaceEntity } from "../../data/domain/entities/place-entity";
+import { PlaceEntity } from "../../domain/entities/place-entity";
 
 export const psqlDS = new DataSource({
   type: "postgres",
@@ -14,6 +14,7 @@ export const psqlDS = new DataSource({
     // require: true,
     rejectUnauthorized: false,
   },
+  synchronize: true,
 });
 
 export class PostgreSQLHelper {

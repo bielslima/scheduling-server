@@ -1,12 +1,13 @@
-import { PlaceController } from "../../presentation/controllers/place-controller"
+import { PlaceDatasource } from "../../data/datasource/place-ds";
+import { PlaceRepository } from "../../data/repositories/place-repository";
+import { CreatePlaceUseCase } from "../../domain/usecases/place/create-place-usecase";
+import { CreatePlaceController } from "../../presentation/controllers/place/create-place-controller";
+import { psqlDS } from "../config/database";
 
-export const makePlaceController = (): PlaceController => {
-    // const mongodbUserRepository = new MongodbUserRepository()
-    // const registerUserOnMailingList = new RegisterUserOnMailingList(mongodbUserRepository)
-    // const nodemailerEmailService = new NodemailerEmailService()
-    // const sendEmailToUserWithBonus = new SendEmailToUserWithBonus(getEmailOptions(), nodemailerEmailService)
-    // const registerUserController = new RegisterUserController(registerUserOnMailingList, sendEmailToUserWithBonus)
-    // return registerUserController
+export const makeCreatePlaceController = (): CreatePlaceController => {
+  const placeDatasource = new PlaceDatasource(psqlDS);
+  const placeRepository = new PlaceRepository(placeDatasource);
+  const createPlaceUseCase = new CreatePlaceUseCase(placeRepository);
 
-    return new PlaceController();
-  }
+  return new CreatePlaceController(createPlaceUseCase);
+};

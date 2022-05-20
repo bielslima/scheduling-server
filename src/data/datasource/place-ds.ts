@@ -1,5 +1,5 @@
-import { IPlaceDatasource } from "../domain/datasource/place-datasource";
-import { PlaceEntity } from "../domain/entities/place-entity";
+import { IPlaceDatasource } from "../../domain/datasource/place-datasource";
+import { PlaceEntity } from "../../domain/entities/place-entity";
 import { DataSource } from "typeorm";
 
 export class PlaceDatasource implements IPlaceDatasource {
